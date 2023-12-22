@@ -10,3 +10,12 @@ func IsEmptySliStr(arr []string) bool {
 	}
 	return true
 }
+
+// StringAdd 字符串拼接
+func StringAdd(arr string, arrAdd string) string {
+	byte1 := []byte(arr)
+	byte2 := []byte(arrAdd)
+	byte1 = append(byte1, byte2...)
+	arr = string(byte1)
+	return arr
+}
