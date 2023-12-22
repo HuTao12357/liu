@@ -1,5 +1,7 @@
 package util
 
+import "strings"
+
 type ErrorMsg struct {
 	msg string
 }
@@ -36,4 +38,16 @@ func StringSub(arr string, begin int, end int) (string, error) {
 	}
 	arr2 := arr[begin:end]
 	return arr2, nil
+}
+
+// StringReplaceFirst 字符串替换 (first)
+func StringReplaceFirst(arr string, old string, new string) string {
+	str := strings.Replace(arr, old, new, 1)
+	return str
+}
+
+// StringReplaceAll 字符串替换 (All)
+func StringReplaceAll(arr string, old string, new string) string {
+	str := strings.Replace(arr, old, new, -1)
+	return str
 }
