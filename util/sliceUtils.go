@@ -51,3 +51,34 @@ func StringReplaceAll(arr string, old string, new string) string {
 	str := strings.Replace(arr, old, new, -1)
 	return str
 }
+
+// 切片的交集
+func SliceIntersection(arrFis []string, arrEnd []string) []string {
+	var newSlice []string
+	for i := 0; i < len(arrFis); i++ {
+		for j := 0; j < len(arrEnd); j++ {
+			if arrFis[i] == arrEnd[j] {
+				newSlice = append(newSlice, string(arrFis[i]))
+			}
+		}
+	}
+	return newSlice
+}
+
+// 切片并集
+func SliceUnion(arrFir []string, arrEnd []string) []string {
+	for _, v := range arrEnd {
+		if !Contains(arrFir, v) {
+			arrFir = append(arrFir, v)
+		}
+	}
+	return arrFir
+}
+func Contains(arr []string, str string) bool {
+	for _, v := range arr {
+		if v == str {
+			return true
+		}
+	}
+	return false
+}
